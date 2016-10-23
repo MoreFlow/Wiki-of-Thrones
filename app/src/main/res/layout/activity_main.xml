@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:weightSum="5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pl.temomuko.moreflow.wikiofthrones.ui.main.MainActivity"
+    android:orientation="vertical"
     android:padding="@dimen/activity_vertical_margin"
-    >
+    android:weightSum="5"
+    tools:context="pl.temomuko.moreflow.wikiofthrones.ui.main.MainActivity">
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:orientation="horizontal"
         android:padding="@dimen/activity_horizontal_margin">
 
         <TextView
@@ -21,16 +20,16 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.6"
+            android:gravity="center"
             android:text="BOOKS"
-            android:textStyle="bold"
             android:textSize="30sp"
-            android:gravity="center"/>
+            android:textStyle="bold" />
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:src="@drawable/ic_import_contacts_black_36dp"/>
+            android:src="@drawable/ic_import_contacts_black_36dp" />
 
     </LinearLayout>
 
@@ -45,16 +44,16 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.6"
+            android:gravity="center"
             android:text="CHARACTERS"
-            android:textStyle="bold"
             android:textSize="30sp"
-            android:gravity="center"/>
+            android:textStyle="bold" />
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:src="@drawable/ic_person_outline_black_36dp"/>
+            android:src="@drawable/ic_person_outline_black_36dp" />
 
     </LinearLayout>
 
@@ -69,16 +68,16 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.6"
+            android:gravity="center"
             android:text="HOUSES"
-            android:textStyle="bold"
             android:textSize="30sp"
-            android:gravity="center"/>
+            android:textStyle="bold" />
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:src="@drawable/ic_home_black_36dp"/>
+            android:src="@drawable/ic_home_black_36dp" />
 
     </LinearLayout>
 
@@ -93,16 +92,16 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.6"
+            android:gravity="center"
             android:text="FAVOURITES"
-            android:textStyle="bold"
             android:textSize="30sp"
-            android:gravity="center"/>
+            android:textStyle="bold" />
 
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.4"
-            android:src="@drawable/ic_star_border_black_36dp"/>
+            android:src="@drawable/ic_star_border_black_36dp" />
 
     </LinearLayout>
 
@@ -116,16 +115,16 @@
         <ImageView
             android:id="@+id/menu_settings"
             android:layout_width="0dp"
-            android:layout_weight="0.5"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_settings_black_36dp"/>
+            android:layout_weight="0.5"
+            android:src="@drawable/ic_settings_black_36dp" />
 
         <ImageView
             android:id="@+id/menu_info"
             android:layout_width="0dp"
-            android:layout_weight="0.5"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_info_black_36dp"/>
+            android:layout_weight="0.5"
+            android:src="@drawable/ic_info_black_36dp" />
 
     </LinearLayout>
 

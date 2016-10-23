@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -19,7 +20,7 @@ import pl.temomuko.moreflow.wikiofthrones.data.model.Book;
 
 public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BookViewHolder> {
 
-    private List<Book> booksList;
+    private List<Book> booksList = new ArrayList<>();
 
     @Override
     public BooksAdapter.BookViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

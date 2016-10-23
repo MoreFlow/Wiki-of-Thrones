@@ -15,19 +15,18 @@ import pl.temomuko.moreflow.wikiofthrones.ui.books.BooksActivity;
 
 public class MainActivity extends SuperActivity {
 
+    public static void startActivity(final Activity activity) {
+        activity.startActivity(new Intent(activity, MainActivity.class));
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
     }
 
     @Override
     protected int getLayoutId() {
         return R.layout.activity_main;
-    }
-
-    public static void startActivity(final Activity activity) {
-        activity.startActivity(new Intent(activity, MainActivity.class));
     }
 
     @OnClick(R.id.menu_books)

@@ -30,7 +30,7 @@ public class BooksPresenter {
             @Override
             public void onResponse(Call<List<Book>> call, Response<List<Book>> response) {
                 booksList = response.body();
-                booksActivity.getBooksAdapter().setBooks(booksList);
+                booksActivity.showBooksList(booksList);
             }
 
             @Override

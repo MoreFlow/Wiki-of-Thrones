@@ -1,5 +1,6 @@
 package pl.temomuko.moreflow.wikiofthrones.ui.books;
 
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -16,13 +17,14 @@ import pl.temomuko.moreflow.wikiofthrones.ui.SuperActivity;
 
 public class BooksActivity extends SuperActivity {
 
+    @BindView(R.id.recycler_view_books)
+    RecyclerView recyclerView;
     private BooksPresenter booksPresenter;
     private BooksAdapter booksAdapter;
 
-    @BindView(R.id.recycler_view_books)
-    RecyclerView recyclerView;
-
-    public BooksActivity() {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         booksAdapter = new BooksAdapter();
         booksPresenter = new BooksPresenter(dataManager, this);
         booksPresenter.prepareBooksList();

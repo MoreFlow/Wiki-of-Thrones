@@ -26,7 +26,7 @@ public class BooksPresenter {
 
     public void prepareBooksList() {
         booksList = new ArrayList<>();
-        dataManager.getWookieService().getBooks().enqueue(new Callback<List<Book>>() {
+        dataManager.getWikiService().getBooks().enqueue(new Callback<List<Book>>() {
             @Override
             public void onResponse(Call<List<Book>> call, Response<List<Book>> response) {
                 booksList = response.body();

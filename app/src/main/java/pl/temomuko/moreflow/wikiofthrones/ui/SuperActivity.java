@@ -17,7 +17,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public abstract class SuperActivity extends Activity {
 
-    private DataManager dataManager;
+    protected DataManager dataManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

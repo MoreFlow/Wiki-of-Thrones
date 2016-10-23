@@ -32,12 +32,7 @@ public class BooksActivity extends SuperActivity {
 
     public BooksActivity() {
         booksAdapter = new BooksAdapter();
-        booksPresenter = new BooksPresenter(
-                new DataManager(
-                        WikiService.Creator.newWikiService(),
-                        new DatabaseHelper(),
-                        new PreferencesHelper(this)),
-                this);
+        booksPresenter = new BooksPresenter(dataManager, this);
         booksPresenter.prepareBooksList();
         setupRecyclerView();
     }

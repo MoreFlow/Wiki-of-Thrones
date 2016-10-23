@@ -1,6 +1,7 @@
 package pl.temomuko.moreflow.wikiofthrones.data;
 
-import retrofit2.Retrofit;
+import pl.temomuko.moreflow.wikiofthrones.data.local.DatabaseHelper;
+import pl.temomuko.moreflow.wikiofthrones.data.remote.WikiService;
 import pl.temomuko.moreflow.wikiofthrones.data.local.PreferencesHelper;
 
 /**
@@ -9,11 +10,25 @@ import pl.temomuko.moreflow.wikiofthrones.data.local.PreferencesHelper;
 
 public class DataManager {
 
-    private final Retrofit retrofit;
-    private final PreferencesHelper PreferencesHelper;
+    private final WikiService wikiService;
+    private final DatabaseHelper databaseHelper;
+    private final PreferencesHelper preferencesHelper;
 
-    public DataManager(Retrofit retrofit, PreferencesHelper preferencesHelper) {
-        this.retrofit = retrofit;
-        PreferencesHelper = preferencesHelper;
+    public DataManager(WikiService wikiService, DatabaseHelper databaseHelper, PreferencesHelper preferencesHelper) {
+        this.wikiService = wikiService;
+        this.databaseHelper = databaseHelper;
+        this.preferencesHelper = preferencesHelper;
+    }
+
+    public WikiService getWikiService() {
+        return wikiService;
+    }
+
+    public DatabaseHelper getDatabaseHelper() {
+        return databaseHelper;
+    }
+
+    public PreferencesHelper getPreferencesHelper() {
+        return preferencesHelper;
     }
 }

@@ -1,5 +1,7 @@
 package pl.temomuko.moreflow.wikiofthrones.data;
 
+import android.content.Context;
+
 import pl.temomuko.moreflow.wikiofthrones.data.local.DatabaseHelper;
 import pl.temomuko.moreflow.wikiofthrones.data.remote.WikiService;
 import pl.temomuko.moreflow.wikiofthrones.data.local.PreferencesHelper;

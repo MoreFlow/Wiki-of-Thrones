@@ -4,8 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
+import butterknife.OnClick;
 import pl.temomuko.moreflow.wikiofthrones.R;
+import pl.temomuko.moreflow.wikiofthrones.ui.books.BooksActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,5 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
     public static void startActivity(final Activity activity) {
         activity.startActivity(new Intent(activity, MainActivity.class));
+    }
+
+    public void startBooksActivity(View view) {
+        Intent intent = new Intent(this, BooksActivity.class);
+        startActivity(intent);
     }
 }

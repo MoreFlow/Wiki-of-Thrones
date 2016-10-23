@@ -5,6 +5,10 @@ import android.content.Context;
 import android.os.Bundle;
 
 import butterknife.ButterKnife;
+import pl.temomuko.moreflow.wikiofthrones.data.DataManager;
+import pl.temomuko.moreflow.wikiofthrones.data.local.DatabaseHelper;
+import pl.temomuko.moreflow.wikiofthrones.data.local.PreferencesHelper;
+import pl.temomuko.moreflow.wikiofthrones.data.remote.WikiService;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
@@ -13,11 +17,14 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public abstract class SuperActivity extends Activity {
 
+    private DataManager dataManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         ButterKnife.bind(this);
+        dataManager = new DataManager(WikiService.Creator.newWikiService(), new DatabaseHelper(), new PreferencesHelper(this));
     }
 
     protected abstract int getLayoutId();

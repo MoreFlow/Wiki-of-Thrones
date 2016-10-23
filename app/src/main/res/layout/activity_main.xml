@@ -1,16 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:weightSum="5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="pl.temomuko.moreflow.wikiofthrones.ui.main.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+    <LinearLayout
+        android:id="@+id/menu_books"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:text="BOOKS"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:gravity="center"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:src="@drawable/ic_import_contacts_black_36dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_characters"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:text="CHARACTERS"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:gravity="center"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:src="@drawable/ic_person_outline_black_36dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_houses"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:text="HOUSES"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:gravity="center"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:src="@drawable/ic_home_black_36dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_favourites"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:text="FAVOURITES"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:gravity="center"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            android:src="@drawable/ic_star_border_black_36dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/menu_settings"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_settings_black_36dp"/>
+
+        <ImageView
+            android:id="@+id/menu_info"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_info_black_36dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

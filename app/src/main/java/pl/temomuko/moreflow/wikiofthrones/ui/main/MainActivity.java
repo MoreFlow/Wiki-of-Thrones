@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         activity.startActivity(new Intent(activity, MainActivity.class));
     }
 
+    @OnClick(R.id.menu_books)
     public void startBooksActivity(View view) {
         Intent intent = new Intent(this, BooksActivity.class);
         startActivity(intent);

@@ -3,20 +3,12 @@ package pl.temomuko.moreflow.wikiofthrones.ui.books;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import pl.temomuko.moreflow.wikiofthrones.R;
-import pl.temomuko.moreflow.wikiofthrones.data.DataManager;
-import pl.temomuko.moreflow.wikiofthrones.data.local.DatabaseHelper;
-import pl.temomuko.moreflow.wikiofthrones.data.local.PreferencesHelper;
 import pl.temomuko.moreflow.wikiofthrones.data.model.Book;
-import pl.temomuko.moreflow.wikiofthrones.data.remote.WikiService;
 import pl.temomuko.moreflow.wikiofthrones.ui.SuperActivity;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * Created by Szymon on 23.10.2016.

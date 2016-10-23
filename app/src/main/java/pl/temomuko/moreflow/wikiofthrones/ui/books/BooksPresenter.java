@@ -1,7 +1,5 @@
 package pl.temomuko.moreflow.wikiofthrones.ui.books;
 
-import android.content.Context;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +26,7 @@ public class BooksPresenter {
 
     public void prepareBooksList() {
         booksList = new ArrayList<>();
-        dataManager.getWikiService().getBooks().enqueue(new Callback<List<Book>>() {
+        dataManager.getWookieService().getBooks().enqueue(new Callback<List<Book>>() {
             @Override
             public void onResponse(Call<List<Book>> call, Response<List<Book>> response) {
                 booksList = response.body();

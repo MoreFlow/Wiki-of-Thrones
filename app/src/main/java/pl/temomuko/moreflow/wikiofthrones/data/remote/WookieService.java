@@ -16,7 +16,7 @@ import retrofit2.http.Path;
  * Created by Szymon on 23.10.2016.
  */
 
-public interface WikiService {
+public interface WookieService {
 
     String ENDPOINT = "http://anapioficeandfire.com/api/";
 
@@ -31,7 +31,7 @@ public interface WikiService {
 
     class Creator {
 
-        public static WikiService newWikiService() {
+        public static WookieService newWikiService() {
 
             Gson gson = new GsonBuilder()
                     .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
@@ -42,7 +42,7 @@ public interface WikiService {
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();
 
-            return retrofit.create(WikiService.class);
+            return retrofit.create(WookieService.class);
         }
     }
 

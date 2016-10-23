@@ -1,9 +1,7 @@
 package pl.temomuko.moreflow.wikiofthrones.data;
 
-import android.content.Context;
-
 import pl.temomuko.moreflow.wikiofthrones.data.local.DatabaseHelper;
-import pl.temomuko.moreflow.wikiofthrones.data.remote.WikiService;
+import pl.temomuko.moreflow.wikiofthrones.data.remote.WookieService;
 import pl.temomuko.moreflow.wikiofthrones.data.local.PreferencesHelper;
 
 /**
@@ -12,18 +10,18 @@ import pl.temomuko.moreflow.wikiofthrones.data.local.PreferencesHelper;
 
 public class DataManager {
 
-    private final WikiService wikiService;
+    private final WookieService wookieService;
     private final DatabaseHelper databaseHelper;
     private final PreferencesHelper preferencesHelper;
 
-    public DataManager(WikiService wikiService, DatabaseHelper databaseHelper, PreferencesHelper preferencesHelper) {
-        this.wikiService = wikiService;
+    public DataManager(WookieService wookieService, DatabaseHelper databaseHelper, PreferencesHelper preferencesHelper) {
+        this.wookieService = wookieService;
         this.databaseHelper = databaseHelper;
         this.preferencesHelper = preferencesHelper;
     }
 
-    public WikiService getWikiService() {
-        return wikiService;
+    public WookieService getWookieService() {
+        return wookieService;
     }
 
     public DatabaseHelper getDatabaseHelper() {

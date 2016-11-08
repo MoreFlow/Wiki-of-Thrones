@@ -4,12 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
+import javax.inject.Inject;
+
 import butterknife.ButterKnife;
 import pl.temomuko.moreflow.wikiofthrones.data.DataManager;
 import pl.temomuko.moreflow.wikiofthrones.data.local.DatabaseHelper;
 import pl.temomuko.moreflow.wikiofthrones.data.local.PreferencesHelper;
 import pl.temomuko.moreflow.wikiofthrones.data.remote.WikiService;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
  * Created by Szymon on 23.10.2016.
@@ -17,7 +18,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public abstract class SuperActivity extends Activity {
 
-    protected DataManager dataManager;
+    @Inject DataManager dataManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +29,4 @@ public abstract class SuperActivity extends Activity {
     }
 
     protected abstract int getLayoutId();
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
 }

@@ -1,5 +1,7 @@
 package pl.temomuko.moreflow.wikiofthrones.data;
 
+import javax.inject.Inject;
+
 import pl.temomuko.moreflow.wikiofthrones.data.local.DatabaseHelper;
 import pl.temomuko.moreflow.wikiofthrones.data.remote.WikiService;
 import pl.temomuko.moreflow.wikiofthrones.data.local.PreferencesHelper;
@@ -14,6 +16,7 @@ public class DataManager {
     private final DatabaseHelper databaseHelper;
     private final PreferencesHelper preferencesHelper;
 
+    @Inject
     public DataManager(WikiService wikiService, DatabaseHelper databaseHelper, PreferencesHelper preferencesHelper) {
         this.wikiService = wikiService;
         this.databaseHelper = databaseHelper;

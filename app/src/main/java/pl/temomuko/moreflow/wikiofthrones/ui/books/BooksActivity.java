@@ -1,16 +1,17 @@
 package pl.temomuko.moreflow.wikiofthrones.ui.books;
 
+import android.app.SearchManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
 import butterknife.BindView;
 import pl.temomuko.moreflow.wikiofthrones.R;
-import pl.temomuko.moreflow.wikiofthrones.data.DataManager;
 import pl.temomuko.moreflow.wikiofthrones.data.model.Book;
 import pl.temomuko.moreflow.wikiofthrones.ui.SuperActivity;
 
@@ -23,17 +24,39 @@ public class BooksActivity extends SuperActivity implements BooksMvpView {
     @BindView(R.id.recycler_view_books)
     RecyclerView recyclerView;
 
-    @Inject BooksAdapter booksAdapter;
-    @Inject BooksPresenter booksPresenter;
+    @BindView(R.id.book_toolbar)
+    Toolbar toolbar;
+
+    BooksAdapter booksAdapter;
+    BooksPresenter booksPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        booksPresenter.prepareBooksList();
+        super.setupToolbar(toolbar, "Books", false);
         setupRecyclerView();
+
+        booksPresenter = new BooksPresenter();
+        booksPresenter.attachView(this);
+        booksPresenter.prepareBooksList();
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        handleIntent(intent);
+    }
+
+    private void handleIntent(Intent intent) {
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            //use the query to search your data somehow
+        }
+
     }
 
     private void setupRecyclerView() {
+        booksAdapter = new BooksAdapter(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setAdapter(booksAdapter);
     }
@@ -44,7 +67,7 @@ public class BooksActivity extends SuperActivity implements BooksMvpView {
     }
 
     public void showError() {
-
+        Toast.makeText(this, "connection error", Toast.LENGTH_LONG).show();
     }
 
     public void showLoadingCircle() {

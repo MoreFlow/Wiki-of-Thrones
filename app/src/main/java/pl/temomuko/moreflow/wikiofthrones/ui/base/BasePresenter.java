@@ -4,7 +4,7 @@ package pl.temomuko.moreflow.wikiofthrones.ui.base;
  * Created by Szymon on 08.11.2016.
  */
 
-public class BasePresenter <T extends MvpView> implements Presenter<T> {
+public class BasePresenter<T extends MvpView> implements Presenter<T> {
 
     private T mvpView;
 

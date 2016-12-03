@@ -11,14 +11,14 @@ public class PreferencesHelper {
 
     public static final String PREF_FILE_NAME = "thrones_pref_file";
 
-    //private final SharedPreferences pref;
+    private final SharedPreferences pref;
 
     public PreferencesHelper(Context context) {
-        //pref = context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE);
+        pref = context.getSharedPreferences(PREF_FILE_NAME, Context.MODE_PRIVATE);
     }
 
-//    public void clear() {
-//        pref.edit().clear().apply();
-//    }
+    public void clear() {
+        pref.edit().clear().apply();
+    }
 
 }

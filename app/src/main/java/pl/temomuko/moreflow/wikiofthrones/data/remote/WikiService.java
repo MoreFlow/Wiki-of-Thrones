@@ -24,9 +24,7 @@ public interface WikiService {
     Call<List<Book>> getBooks();
 
     @GET("books/{id}")
-    Call<Book> getBook(@Path("id") int id);
-
-
+    Call<Book> getBook(@Path("id") String id);
 
 
     class Creator {

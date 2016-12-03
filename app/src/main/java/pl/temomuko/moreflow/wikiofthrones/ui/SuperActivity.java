@@ -1,31 +1,27 @@
 package pl.temomuko.moreflow.wikiofthrones.ui;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
-
-import javax.inject.Inject;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 import butterknife.ButterKnife;
-import pl.temomuko.moreflow.wikiofthrones.data.DataManager;
-import pl.temomuko.moreflow.wikiofthrones.data.local.DatabaseHelper;
-import pl.temomuko.moreflow.wikiofthrones.data.local.PreferencesHelper;
-import pl.temomuko.moreflow.wikiofthrones.data.remote.WikiService;
 
-/**
- * Created by Szymon on 23.10.2016.
- */
-
-public abstract class SuperActivity extends Activity {
-
-    @Inject DataManager dataManager;
+public abstract class SuperActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
         ButterKnife.bind(this);
-        dataManager = new DataManager(WikiService.Creator.newWikiService(), new DatabaseHelper(), new PreferencesHelper(this));
+    }
+
+    protected void setupToolbar(Toolbar toolbar, String title, boolean isHome) {
+        toolbar.setTitle(title);
+        setSupportActionBar(toolbar);
+        if (!isHome) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
     }
 
     protected abstract int getLayoutId();

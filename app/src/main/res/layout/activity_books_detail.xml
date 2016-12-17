@@ -1,21 +1,258 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/books_detail_toolbar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:card_view="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/book_id"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/books_detail_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            card_view:cardCornerRadius="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/book_detail_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="24dp"
+                    android:text="There should be title"
+                    android:textColor="@android:color/black"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/book_detail_author"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/book_detail_title"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="There should be author"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/book_detail_isbn_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/book_detail_author"
+                    android:layout_marginLeft="16dp"
+                    android:text="ISBN"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/book_detail_isbn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/book_detail_isbn_label"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="There should be isbn"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/book_detail_pages_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/book_detail_isbn"
+                    android:layout_marginLeft="16dp"
+                    android:text="Number of pages"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/book_detail_pages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/book_detail_pages_label"
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginLeft="16dp"
+                    android:text="There should be num of pages"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
+
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</LinearLayout>
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp">
+
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+        android:id="@+id/book_detail_release_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="left"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:text="Release"
+        android:textSize="24sp"/>
+
+        <TextView
+        android:id="@+id/book_detail_publisher_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/book_detail_release_title"
+        android:layout_marginLeft="16dp"
+        android:text="Publisher"
+        android:textSize="14sp" />
+
+        <TextView
+        android:id="@+id/book_detail_publisher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/book_detail_publisher_label"
+        android:layout_marginBottom="16dp"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="16dp"
+        android:text="There should be publisher"
+        android:textSize="20sp" />
+
+        <TextView
+        android:id="@+id/book_detail_country_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/book_detail_publisher"
+        android:layout_marginLeft="16dp"
+        android:text="Country"
+        android:textSize="14sp" />
+
+        <TextView
+        android:id="@+id/book_detail_country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/book_detail_country_label"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:textColor="@android:color/black"
+        android:text="There should be country"
+        android:textSize="20sp" />
+
+        <TextView
+        android:id="@+id/book_detail_release_date_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/book_detail_country"
+        android:layout_marginLeft="16dp"
+        android:text="Date"
+        android:textSize="14sp" />
+
+        <TextView
+        android:id="@+id/book_detail_release_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/book_detail_release_date_label"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:textColor="@android:color/black"
+        android:text="There should be date"
+        android:textSize="20sp" />
+        </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            card_view:cardCornerRadius="4dp">
+
+            <RelativeLayout
+                android:id="@+id/accordian_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true">
+
+                <TextView
+                    android:id="@+id/book_detail_characters_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="24dp"
+                    android:gravity="left"
+                    android:text="Characters"
+                    android:textColor="@android:color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/expand_image_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginRight="24dp"
+                    android:background="@android:color/white"
+                    android:src="@drawable/ic_expand_more_black_36dp" />
+
+                <com.github.aakira.expandablelayout.ExpandableLinearLayout
+                    android:id="@+id/book_detail_expandable_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/book_detail_characters_title"
+                    android:orientation="vertical"
+                    android:paddingBottom="14dp"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    app:ael_duration="500"
+                    app:ael_expanded="false"
+                    app:ael_orientation="vertical">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/books_detail_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </com.github.aakira.expandablelayout.ExpandableLinearLayout>
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+
+</ScrollView>

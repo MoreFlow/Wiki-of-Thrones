@@ -3,6 +3,9 @@ package pl.temomuko.moreflow.wikiofthrones.ui.main;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -12,6 +15,7 @@ import pl.temomuko.moreflow.wikiofthrones.R;
 import pl.temomuko.moreflow.wikiofthrones.ui.SuperActivity;
 import pl.temomuko.moreflow.wikiofthrones.ui.books.BooksActivity;
 import pl.temomuko.moreflow.wikiofthrones.ui.characters.CharactersActivity;
+import pl.temomuko.moreflow.wikiofthrones.ui.houses.HousesActivity;
 import pl.temomuko.moreflow.wikiofthrones.ui.settings.SettingsActivity;
 
 public class MainActivity extends SuperActivity {
@@ -23,6 +27,27 @@ public class MainActivity extends SuperActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setupToolbar(toolbar, getString(R.string.app_name), true);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.action_about:
+                Toast.makeText(this, R.string.about, Toast.LENGTH_LONG).show();
+                break;
+            case R.id.action_settings:
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @OnClick(R.id.menu_books)
@@ -37,15 +62,10 @@ public class MainActivity extends SuperActivity {
         startActivity(intent);
     }
 
-    @OnClick(R.id.menu_settings)
-    public void startSettingsActivity(View view) {
-        Intent intent = new Intent(this, SettingsActivity.class);
+    @OnClick(R.id.menu_houses)
+    public void startHousesActivity(View view) {
+        Intent intent = new Intent(this, HousesActivity.class);
         startActivity(intent);
-    }
-
-    @OnClick(R.id.menu_info)
-    public void showInfo(View view) {
-        Toast.makeText(this, R.string.info, Toast.LENGTH_LONG).show();
     }
 
     @Override

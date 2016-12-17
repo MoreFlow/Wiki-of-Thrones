@@ -6,6 +6,7 @@ import com.google.gson.GsonBuilder;
 import java.util.List;
 
 import pl.temomuko.moreflow.wikiofthrones.data.model.Book;
+import pl.temomuko.moreflow.wikiofthrones.data.model.Character;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -26,6 +27,14 @@ public interface WikiService {
     @GET("books/{id}")
     Call<Book> getBook(@Path("id") String id);
 
+    @GET("characters")
+    Call<List<Character>> getCharacters();
+
+    @GET("characters?name={name}")
+    Call<List<Character>> getCharactersByName(@Path("name") String name);
+
+    @GET("characters/{id}")
+    Call<Character> getCharacterById(@Path("id") String id);
 
     class Creator {
 

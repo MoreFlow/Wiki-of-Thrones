@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import pl.temomuko.moreflow.wikiofthrones.R;
 import pl.temomuko.moreflow.wikiofthrones.data.model.Book;
 import pl.temomuko.moreflow.wikiofthrones.ui.books_detail.BooksDetailActivity;
 
@@ -33,7 +35,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BookViewHold
     @Override
     public BooksAdapter.BookViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(android.R.layout.simple_list_item_1, parent, false);
+                .inflate(R.layout.item_book, parent, false);
         return new BookViewHolder(itemView);
     }
 
@@ -41,7 +43,8 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BookViewHold
     public void onBindViewHolder(BooksAdapter.BookViewHolder holder, int position) {
         final Book book = booksList.get(position);
         holder.nameTextView.setText(book.getName());
-        holder.nameTextView.setOnClickListener(new View.OnClickListener() {
+        holder.dateTextView.setText("Released: " + book.getReleased());
+        holder.detailsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, BooksDetailActivity.class);
@@ -62,8 +65,14 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BookViewHold
 
     class BookViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(android.R.id.text1)
+        @BindView(R.id.card_book_title)
         TextView nameTextView;
+
+        @BindView(R.id.card_book_date)
+        TextView dateTextView;
+
+        @BindView(R.id.card_book_details)
+        Button detailsButton;
 
         public BookViewHolder(View itemView) {
             super(itemView);

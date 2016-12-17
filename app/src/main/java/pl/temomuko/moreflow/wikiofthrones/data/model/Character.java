@@ -26,4 +26,59 @@ public class Character {
     public List<String> tvSeries = new ArrayList<>();
     public List<String> playedBy = new ArrayList<>();
 
+    public String getName() {
+        return name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getCulture() {
+        return culture;
+    }
+
+    public String getBorn() {
+        return born;
+    }
+
+    public String getDied() {
+        return died;
+    }
+
+    public List<String> getTitles() {
+        return titles;
+    }
+
+    public List<String> getAliases() {
+        return aliases;
+    }
+
+    public String getFather() {
+        return father;
+    }
+
+    public String getMother() {
+        return mother;
+    }
+
+    public String getSpouse() {
+        return spouse;
+    }
+
+    public List<String> getAllegiances() {
+        return allegiances;
+    }
+
+    public List<String> getBooks() {
+        return books;
+    }
+
+    public List<String> getTvSeries() {
+        return tvSeries;
+    }
+
+    public List<String> getPlayedBy() {
+        return playedBy;
+    }
 }

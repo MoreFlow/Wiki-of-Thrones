@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="4"
+    android:weightSum="3"
     tools:context="pl.temomuko.moreflow.wikiofthrones.ui.main.MainActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/menu_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="58dp"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:titleTextColor="#ffffff">
-
-    </android.support.v7.widget.Toolbar>
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal"
-        android:padding="@dimen/activity_horizontal_margin">
+        android:padding="@dimen/activity_horizontal_margin"
+        android:background="@drawable/library">
 
         <TextView
             android:id="@+id/menu_books"
@@ -31,14 +32,9 @@
             android:layout_weight="0.6"
             android:gravity="center"
             android:text="BOOKS"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textSize="35sp"
+            android:textColor="@android:color/white"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.4"
-            android:src="@drawable/ic_import_contacts_black_36dp" />
 
     </LinearLayout>
 
@@ -47,7 +43,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="@dimen/activity_horizontal_margin">
+        android:padding="@dimen/activity_horizontal_margin"
+        android:background="@drawable/characters"
+        >
 
         <TextView
             android:layout_width="0dp"
@@ -55,14 +53,10 @@
             android:layout_weight="0.6"
             android:gravity="center"
             android:text="CHARACTERS"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textSize="35sp"
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.4"
-            android:src="@drawable/ic_person_outline_black_36dp" />
+            android:textColor="@android:color/white"/>
+
 
     </LinearLayout>
 
@@ -71,7 +65,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="@dimen/activity_horizontal_margin">
+        android:padding="@dimen/activity_horizontal_margin"
+        android:background="@drawable/houses"
+        >
 
         <TextView
             android:layout_width="0dp"
@@ -79,37 +75,8 @@
             android:layout_weight="0.6"
             android:gravity="center"
             android:text="HOUSES"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.4"
-            android:src="@drawable/ic_home_black_36dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:padding="@dimen/activity_horizontal_margin">
-
-        <ImageView
-            android:id="@+id/menu_settings"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:src="@drawable/ic_settings_black_36dp" />
-
-        <ImageView
-            android:id="@+id/menu_info"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.5"
-            android:src="@drawable/ic_info_black_36dp" />
+            android:textSize="35sp"
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 

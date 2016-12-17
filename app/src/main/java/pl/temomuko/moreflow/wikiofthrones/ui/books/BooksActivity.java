@@ -15,6 +15,8 @@ import pl.temomuko.moreflow.wikiofthrones.R;
 import pl.temomuko.moreflow.wikiofthrones.data.model.Book;
 import pl.temomuko.moreflow.wikiofthrones.ui.SuperActivity;
 
+import static android.support.v7.recyclerview.R.attr.layoutManager;
+
 /**
  * Created by Szymon on 23.10.2016.
  */
@@ -39,20 +41,6 @@ public class BooksActivity extends SuperActivity implements BooksMvpView {
         booksPresenter = new BooksPresenter();
         booksPresenter.attachView(this);
         booksPresenter.prepareBooksList();
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        handleIntent(intent);
-    }
-
-    private void handleIntent(Intent intent) {
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            String query = intent.getStringExtra(SearchManager.QUERY);
-            //use the query to search your data somehow
-        }
-
     }
 
     private void setupRecyclerView() {

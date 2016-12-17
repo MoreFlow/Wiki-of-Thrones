@@ -1,10 +1,12 @@
 package pl.temomuko.moreflow.wikiofthrones.ui;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import butterknife.ButterKnife;
+import pl.temomuko.moreflow.wikiofthrones.R;
 
 public abstract class SuperActivity extends AppCompatActivity {
 
@@ -17,6 +19,7 @@ public abstract class SuperActivity extends AppCompatActivity {
 
     protected void setupToolbar(Toolbar toolbar, String title, boolean isHome) {
         toolbar.setTitle(title);
+        toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
         if (!isHome) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

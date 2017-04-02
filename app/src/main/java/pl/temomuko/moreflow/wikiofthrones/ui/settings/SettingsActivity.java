@@ -5,7 +5,7 @@ import android.support.v7.widget.Toolbar;
 
 import butterknife.BindView;
 import pl.temomuko.moreflow.wikiofthrones.R;
-import pl.temomuko.moreflow.wikiofthrones.ui.SuperActivity;
+import pl.temomuko.moreflow.wikiofthrones.ui.base.SuperActivity;
 
 public class SettingsActivity extends SuperActivity {
 

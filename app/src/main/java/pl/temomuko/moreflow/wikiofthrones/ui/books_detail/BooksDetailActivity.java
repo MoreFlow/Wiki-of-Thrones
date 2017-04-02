@@ -6,6 +6,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -20,7 +21,7 @@ import butterknife.OnClick;
 import pl.temomuko.moreflow.wikiofthrones.R;
 import pl.temomuko.moreflow.wikiofthrones.data.model.Book;
 import pl.temomuko.moreflow.wikiofthrones.data.model.Character;
-import pl.temomuko.moreflow.wikiofthrones.ui.SuperActivity;
+import pl.temomuko.moreflow.wikiofthrones.ui.base.SuperActivity;
 
 /**
  * Created by Szymon on 02.12.2016.
@@ -52,8 +53,8 @@ public class BooksDetailActivity extends SuperActivity implements BooksDetailMvp
     @BindView(R.id.book_detail_release_date)
     TextView dateTextView;
 
-    @BindView(R.id.book_detail_expandable_layout)
-    ExpandableLinearLayout expandableLinearLayout;
+//    @BindView(R.id.book_detail_expandable_layout)
+//    ExpandableLinearLayout expandableLinearLayout;
 
     @BindView(R.id.accordian_header)
     RelativeLayout expandableLayoutHeader;
@@ -74,8 +75,6 @@ public class BooksDetailActivity extends SuperActivity implements BooksDetailMvp
         setupPresenter();
         setupRecyclerView();
         consumeIntent();
-
-        //presenter.getCharacters();
     }
 
     private void setupPresenter() {
@@ -83,15 +82,9 @@ public class BooksDetailActivity extends SuperActivity implements BooksDetailMvp
         presenter.attachView(this);
     }
 
-    private void setupRecyclerView() {
-        characterAdapter = new CharacterListAdapter(this);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        recyclerView.setAdapter(characterAdapter);
-    }
-
     public void consumeIntent() {
         Intent intent = getIntent();
-        presenter.getBookById(intent.getStringExtra("id"));
+        presenter.loadBookById(intent.getStringExtra("id"));
     }
 
     @Override
@@ -107,22 +100,28 @@ public class BooksDetailActivity extends SuperActivity implements BooksDetailMvp
         dateTextView.setText(book.getReleased());
     }
 
-    @Override
-    public void showCharactersList(List<Character> charactersList) {
-        characterAdapter.setCharacters(charactersList);
-        characterAdapter.notifyDataSetChanged();
+    private void setupRecyclerView() {
+        characterAdapter = new CharacterListAdapter(this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerView.setAdapter(characterAdapter);
     }
 
-    @OnClick(R.id.expand_image_view)
-    public void expandLayout(View view) {
-        if(expandableLinearLayout.isExpanded()) {
-            expandableLinearLayout.toggle();
-            expandImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_expand_more_black_36dp));
-        } else {
-            expandableLinearLayout.toggle();
-            expandImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_expand_less_black_36dp));
-        }
+    @Override
+    public void showCharactersList(List<Character> charactersList) {
+        Log.d("TAGG", charactersList.toString());
+        characterAdapter.setCharacters(charactersList);
     }
+//
+//    @OnClick(R.id.expand_image_view)
+//    public void expandLayout(View view) {
+//        if(expandableLinearLayout.isExpanded()) {
+//            expandableLinearLayout.toggle();
+//            expandImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_expand_more_black_36dp));
+//        } else {
+//            expandableLinearLayout.toggle();
+//            expandImageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_expand_less_black_36dp));
+//        }
+//    }
 
     @Override
     protected int getLayoutId() {

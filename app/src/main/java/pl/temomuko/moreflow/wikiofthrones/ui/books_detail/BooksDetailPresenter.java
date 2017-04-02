@@ -27,13 +27,13 @@ public class BooksDetailPresenter extends BasePresenter<BooksDetailMvpView> {
         return book;
     }
 
-    public void getBookById(String bookId) {
-        WikiService.Creator.newWikiService().getBook(bookId).clone().enqueue(new Callback<Book>() {
+    public void loadBookById(String bookId) {
+        WikiService.Creator.newWikiService().getBook(bookId).enqueue(new Callback<Book>() {
             @Override
             public void onResponse(Call<Book> call, Response<Book> response) {
                 book = response.body();
                 getMvpView().showBookDetails(book);
-                getCharacters();
+                loadCharacters();
             }
 
             @Override
@@ -44,28 +44,35 @@ public class BooksDetailPresenter extends BasePresenter<BooksDetailMvpView> {
     }
 
 
-    public void getCharacterById(String id) { //tu jest problem
-        WikiService.Creator.newWikiService().getCharacterById(id).clone().enqueue(new Callback<Character>() {
+    private void addCharacterById(String id, final boolean last) { //tu jest problem
+        WikiService.Creator.newWikiService().getCharacterById(id).enqueue(new Callback<Character>() {
             @Override
             public void onResponse(Call<Character> call, Response<Character> response) {
-                charactersList.add(response.body());
+                charactersList.add(response.body()); //wchodzi ale nie dodaje
+                if(last) {
+                    getMvpView().showCharactersList(charactersList);
+                }
             }
 
             @Override
             public void onFailure(Call<Character> call, Throwable t) {
-                Log.d("TAGG", "FAIL!");
             }
         });
     }
 
-    public void getCharacters() {
+    private void loadCharacters() {
         if(getBook() != null) {
-            for (String characterLink : getBook().getLinksToCharacters()) {
-                String[] elements = characterLink.split("/");
+            List<String> linksToCharacters = getBook().getLinksToCharacters();
+            int pageSize = 10;
+            for (int i = 0; (i < linksToCharacters.size()) && (i < pageSize); i++) {
+                String[] elements = linksToCharacters.get(i).split("/");
                 String id = elements[elements.length - 1];
-                getCharacterById(id);
+                if(i == pageSize - 1) {
+                    addCharacterById(id, true);
+                } else {
+                    addCharacterById(id, false);
+                }
             }
-            getMvpView().showCharactersList(charactersList);
         }
     }
 }

@@ -1,4 +1,4 @@
-package pl.temomuko.moreflow.wikiofthrones.ui;
+package pl.temomuko.moreflow.wikiofthrones.ui.base;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -18,12 +18,13 @@ public abstract class SuperActivity extends AppCompatActivity {
     }
 
     protected void setupToolbar(Toolbar toolbar, String title, boolean isHome) {
-        toolbar.setTitle(title);
-        toolbar.setTitleTextColor(Color.WHITE);
-        setSupportActionBar(toolbar);
-        if (!isHome) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        if(toolbar != null) {
+            toolbar.setTitle(title);
+            toolbar.setTitleTextColor(Color.WHITE);
+            setSupportActionBar(toolbar);
+            if (!isHome) {
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            }
         }
     }
 

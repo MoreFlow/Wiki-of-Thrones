@@ -81,4 +81,26 @@ public class Character {
     public List<String> getPlayedBy() {
         return playedBy;
     }
+
+    @Override
+    public String toString() {
+        return "Character{" +
+                "url='" + url + '\'' +
+                ", name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                ", culture='" + culture + '\'' +
+                ", born='" + born + '\'' +
+                ", died='" + died + '\'' +
+                ", titles=" + titles +
+                ", aliases=" + aliases +
+                ", father='" + father + '\'' +
+                ", mother='" + mother + '\'' +
+                ", spouse='" + spouse + '\'' +
+                ", allegiances=" + allegiances +
+                ", books=" + books +
+                ", povBooks=" + povBooks +
+                ", tvSeries=" + tvSeries +
+                ", playedBy=" + playedBy +
+                '}';
+    }
 }

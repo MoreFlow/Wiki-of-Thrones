@@ -12,6 +12,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import pl.temomuko.moreflow.wikiofthrones.R;
 import pl.temomuko.moreflow.wikiofthrones.data.model.Character;
 import pl.temomuko.moreflow.wikiofthrones.data.remote.WikiService;
 
@@ -30,7 +31,7 @@ public class CharacterListAdapter extends RecyclerView.Adapter<CharacterListAdap
     @Override
     public CharacterListAdapter.CharacterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(android.R.layout.simple_list_item_1, parent, false);
+                .inflate(R.layout.item_character, parent, false);
         return new CharacterListAdapter.CharacterViewHolder(itemView);
     }
 
@@ -50,12 +51,13 @@ public class CharacterListAdapter extends RecyclerView.Adapter<CharacterListAdap
 
     public void setCharacters(List<Character> charactersList) {
         this.charactersList = charactersList;
+        notifyDataSetChanged();
     }
 
 
     class CharacterViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(android.R.id.text1)
+        @BindView(R.id.item_character_name)
         TextView nameTextView;
 
         public CharacterViewHolder(View itemView) {

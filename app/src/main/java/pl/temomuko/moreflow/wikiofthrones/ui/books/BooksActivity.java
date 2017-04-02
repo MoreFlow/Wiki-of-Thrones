@@ -1,7 +1,5 @@
 package pl.temomuko.moreflow.wikiofthrones.ui.books;
 
-import android.app.SearchManager;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,9 +11,7 @@ import java.util.List;
 import butterknife.BindView;
 import pl.temomuko.moreflow.wikiofthrones.R;
 import pl.temomuko.moreflow.wikiofthrones.data.model.Book;
-import pl.temomuko.moreflow.wikiofthrones.ui.SuperActivity;
-
-import static android.support.v7.recyclerview.R.attr.layoutManager;
+import pl.temomuko.moreflow.wikiofthrones.ui.base.SuperActivity;
 
 /**
  * Created by Szymon on 23.10.2016.

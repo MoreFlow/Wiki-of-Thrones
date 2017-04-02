@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import butterknife.BindView;
 import pl.temomuko.moreflow.wikiofthrones.R;
-import pl.temomuko.moreflow.wikiofthrones.ui.SuperActivity;
+import pl.temomuko.moreflow.wikiofthrones.ui.base.SuperActivity;
 
 public class HousesActivity extends SuperActivity {
 

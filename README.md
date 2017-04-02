@@ -1,8 +1,11 @@
-# Wiki-of-Thrones
-Project built with MVP by Ribot
+# Wiki of Thrones
 
-Libraries used:
+It is not finished yet, but feel free to look around.
+
+Project built with MVP.
+It is working with https://anapioficeandfire.com/
+
+## Libraries used:
 - Retrofit
 - Butterknife
-- Calligraphy
 - Gson
